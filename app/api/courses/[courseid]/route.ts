@@ -41,18 +41,10 @@ export const PUT = async (
 };
 
 export const DELETE = async (
-  req: Request
+  { params }: { params: { courseid: number } }
 ) => {
   if (!isAdmin()) {
     return new NextResponse("Unauthorized", { status: 401 });
-  }
-
-  const { searchParams } = new URL(req.url);
-  const courseIdParams = searchParams.get();
-
-  const courseidNumber = Number(courseid);
-  if (isNaN(courseidNumber)) {
-    return new NextResponse("Invalid course ID", { status: 400 });
   }
 
   const data = await db
