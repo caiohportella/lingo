@@ -41,6 +41,7 @@ export const PUT = async (
 };
 
 export const DELETE = async (
+  req: Request,
   { params }: { params: { courseid: number } }
 ) => {
   if (!isAdmin()) {
