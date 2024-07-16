@@ -15,14 +15,16 @@ type UnitProps = {
 };
 
 const Unit = ({
-  id,
-  order,
   title,
   description,
   lessons,
   activeLesson,
   activeLessonPercentage,
 }: UnitProps) => {
+  console.log("lessons", lessons);
+  console.log("activeLesson", activeLesson);
+  console.log("activeLessonPercentage", activeLessonPercentage);
+
   return (
     <>
       <UnitBanner title={title} description={description} />
